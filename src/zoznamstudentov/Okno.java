@@ -49,6 +49,7 @@ public class Okno extends javax.swing.JFrame {
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         btnRemove.setText("REMOVE");
+        btnRemove.setEnabled(false);
         btnRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRemoveActionPerformed(evt);
@@ -57,6 +58,11 @@ public class Okno extends javax.swing.JFrame {
         jPanel1.add(btnRemove, java.awt.BorderLayout.PAGE_END);
 
         lstZoznam.setModel(this.zoznamStudentov);
+        lstZoznam.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                lstZoznamValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(lstZoznam);
 
         jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -98,6 +104,10 @@ public class Okno extends javax.swing.JFrame {
             this.zoznamStudentov.remove(sel);
         }
     }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void lstZoznamValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstZoznamValueChanged
+        this.btnRemove.setEnabled(!this.lstZoznam.isSelectionEmpty());
+    }//GEN-LAST:event_lstZoznamValueChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
