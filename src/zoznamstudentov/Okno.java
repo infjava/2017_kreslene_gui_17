@@ -5,16 +5,22 @@
  */
 package zoznamstudentov;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author janik
  */
 public class Okno extends javax.swing.JFrame {
 
+    private final DefaultListModel<String> zoznamStudentov;
+
     /**
      * Creates new form Okno
      */
     public Okno() {
+        this.zoznamStudentov = new DefaultListModel<String>();
+        
         this.initComponents();
     }
 
@@ -45,6 +51,7 @@ public class Okno extends javax.swing.JFrame {
         btnRemove.setText("REMOVE");
         jPanel1.add(btnRemove, java.awt.BorderLayout.PAGE_END);
 
+        lstZoznam.setModel(this.zoznamStudentov);
         jScrollPane1.setViewportView(lstZoznam);
 
         jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -54,6 +61,11 @@ public class Okno extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         btnAdd.setText("ADD");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnAdd, java.awt.BorderLayout.PAGE_END);
 
         jPanel3.setLayout(new java.awt.GridLayout(2, 1));
@@ -68,6 +80,12 @@ public class Okno extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        String meno = this.txtMeno.getText();
+        this.zoznamStudentov.addElement(meno);
+        this.txtMeno.setText("");
+    }//GEN-LAST:event_btnAddActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
