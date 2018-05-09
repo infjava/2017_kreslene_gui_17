@@ -42,14 +42,9 @@ public class Okno extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jButton1.setText("jButton1");
+        jButton1.setText("REMOVE");
         jPanel1.add(jButton1, java.awt.BorderLayout.PAGE_END);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
 
         jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -58,15 +53,13 @@ public class Okno extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jButton2.setText("jButton2");
+        jButton2.setText("ADD");
         jPanel2.add(jButton2, java.awt.BorderLayout.PAGE_END);
 
         jPanel3.setLayout(new java.awt.GridLayout(2, 1));
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Zadaj meno:");
         jPanel3.add(jLabel1);
-
-        jTextField1.setText("jTextField1");
         jPanel3.add(jTextField1);
 
         jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
