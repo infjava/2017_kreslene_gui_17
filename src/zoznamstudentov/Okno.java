@@ -15,13 +15,13 @@ import javax.swing.event.DocumentListener;
  */
 public class Okno extends javax.swing.JFrame {
 
-    private final DefaultListModel<String> zoznamStudentov;
+    private final DefaultListModel<Student> zoznamStudentov;
 
     /**
      * Creates new form Okno
      */
     public Okno() {
-        this.zoznamStudentov = new DefaultListModel<String>();
+        this.zoznamStudentov = new DefaultListModel<Student>();
         
         this.initComponents();
         
@@ -114,7 +114,7 @@ public class Okno extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         String meno = this.txtMeno.getText();
-        this.zoznamStudentov.addElement(meno);
+        this.zoznamStudentov.addElement(new Student(meno));
         this.txtMeno.setText("");
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -132,7 +132,7 @@ public class Okno extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnRemove;
-    private javax.swing.JList<String> lstZoznam;
+    private javax.swing.JList<Student> lstZoznam;
     private javax.swing.JTextField txtMeno;
     // End of variables declaration//GEN-END:variables
 }
