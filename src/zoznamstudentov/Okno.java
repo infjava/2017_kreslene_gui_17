@@ -27,25 +27,25 @@ public class Okno extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        javax.swing.JPanel jPanel1 = new javax.swing.JPanel();
+        btnRemove = new javax.swing.JButton();
+        javax.swing.JScrollPane jScrollPane1 = new javax.swing.JScrollPane();
+        lstZoznam = new javax.swing.JList<>();
+        javax.swing.JPanel jPanel2 = new javax.swing.JPanel();
+        btnAdd = new javax.swing.JButton();
+        javax.swing.JPanel jPanel3 = new javax.swing.JPanel();
+        javax.swing.JLabel jLabel1 = new javax.swing.JLabel();
+        txtMeno = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 2));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jButton1.setText("REMOVE");
-        jPanel1.add(jButton1, java.awt.BorderLayout.PAGE_END);
+        btnRemove.setText("REMOVE");
+        jPanel1.add(btnRemove, java.awt.BorderLayout.PAGE_END);
 
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(lstZoznam);
 
         jPanel1.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
@@ -53,14 +53,14 @@ public class Okno extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jButton2.setText("ADD");
-        jPanel2.add(jButton2, java.awt.BorderLayout.PAGE_END);
+        btnAdd.setText("ADD");
+        jPanel2.add(btnAdd, java.awt.BorderLayout.PAGE_END);
 
         jPanel3.setLayout(new java.awt.GridLayout(2, 1));
 
         jLabel1.setText("Zadaj meno:");
         jPanel3.add(jLabel1);
-        jPanel3.add(jTextField1);
+        jPanel3.add(txtMeno);
 
         jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
 
@@ -70,14 +70,9 @@ public class Okno extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnRemove;
+    private javax.swing.JList<String> lstZoznam;
+    private javax.swing.JTextField txtMeno;
     // End of variables declaration//GEN-END:variables
 }
