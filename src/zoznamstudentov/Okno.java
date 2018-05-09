@@ -49,6 +49,11 @@ public class Okno extends javax.swing.JFrame {
         jPanel1.setLayout(new java.awt.BorderLayout());
 
         btnRemove.setText("REMOVE");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnRemove, java.awt.BorderLayout.PAGE_END);
 
         lstZoznam.setModel(this.zoznamStudentov);
@@ -86,6 +91,13 @@ public class Okno extends javax.swing.JFrame {
         this.zoznamStudentov.addElement(meno);
         this.txtMeno.setText("");
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        int sel = this.lstZoznam.getSelectedIndex();
+        if (sel >= 0) {
+            this.zoznamStudentov.remove(sel);
+        }
+    }//GEN-LAST:event_btnRemoveActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
