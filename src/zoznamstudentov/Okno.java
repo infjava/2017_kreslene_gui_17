@@ -6,6 +6,8 @@
 package zoznamstudentov;
 
 import javax.swing.DefaultListModel;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  *
@@ -22,6 +24,23 @@ public class Okno extends javax.swing.JFrame {
         this.zoznamStudentov = new DefaultListModel<String>();
         
         this.initComponents();
+        
+        this.txtMeno.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                Okno.this.btnAdd.setEnabled(!Okno.this.txtMeno.getText().isEmpty());
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                Okno.this.btnAdd.setEnabled(!Okno.this.txtMeno.getText().isEmpty());
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                Okno.this.btnAdd.setEnabled(!Okno.this.txtMeno.getText().isEmpty());
+            }
+        });
     }
 
     /**
@@ -72,6 +91,7 @@ public class Okno extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         btnAdd.setText("ADD");
+        btnAdd.setEnabled(false);
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
